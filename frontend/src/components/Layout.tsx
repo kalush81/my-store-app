@@ -1,14 +1,17 @@
 import React from "react";
-interface Props {
-    children: React.ReactNode;
-};
+import Header from "./Header";
 
-const Layout: React.FC<Props> = ({children}) => {
-    return ( 
-        <>
-            {children}
-        </>
-     );
+interface Props {
+  children: React.ReactNode;
 }
+
+const Layout: React.FC<Props> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
+};
 
 export default Layout;
