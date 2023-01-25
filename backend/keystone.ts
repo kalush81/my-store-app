@@ -6,6 +6,7 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
+import { Product } from './schemas/Product';
 
 const databaseUrl =
   process.env.DATABASE_URL || 'mongodb://localhost/my-store-cluster';
@@ -32,6 +33,7 @@ export default withAuth(
     },
     lists: createSchema({
       User,
+      Product,
     }),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     ui: { isAccessAllowed: ({ session }) => !!session?.data },
